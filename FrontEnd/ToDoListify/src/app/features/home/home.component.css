@@ -1,0 +1,29 @@
+.container {
+    max-width: 800px;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.bi-check-circle-fill {
+    font-size: 1.2rem;
+}
+
+.btn {
+    border-radius: 30px;
+}

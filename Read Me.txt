@@ -1,0 +1,48 @@
+					ToDoListify
+Technologies Used:
+	Back-End: .NET 7.0 (ASP.NET Web API)
+	Front-End: Angular, Bootstrap
+	Database: SQL Server (LocalDB)
+
+Steps to Set Up and Run the Application:
+
+	1. Install .NET 7.0 SDK and Runtime
+		Download and install both the SDK and Runtime from the official .NET website:
+		https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+
+	2. Install SQL Server
+		You can download SQL Server from here: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+
+		Ensure that SQL Server LocalDB is enabled, as the project uses it for development purposes.
+
+	3. Configure the Database
+		The project uses SQL Server LocalDB by default. If you are using SQL Server LocalDB, no further changes are needed.
+
+		The default connection string is defined in the appsettings.json file:
+
+		"ConnectionStrings": {
+  		 "ToDoListifyDb": "Server=(LocalDb)\		\MSSQLLocalDB;Database=ToDoListifyDb;Trusted_Connection=True;TrustServerCertificate=True"
+		}
+		If you want to use a different SQL Server instance, update the ToDoListifyDb connection string in the appsettings.json file.
+
+	4. Run Database Migrations
+		Open the solution in Visual Studio.
+		Open Package Manager Console from Tools > NuGet Package Manager > Package Manager Console.
+		Run the following command to apply migrations and create the database:
+			Update-Database
+	5. Set Up the Front-End
+		Install Node.js and npm from the Node.js website.
+		Navigate to the Angular front-end project directory in a terminal.
+		Run the following command to install all dependencies:
+		npm install
+
+	6. Run the Application
+		Back-End (API):
+			Open the solution file in Visual Studio.
+			Build the solution using Ctrl + Shift + B.
+			Start debugging the API by pressing F5 or by clicking Start Debugging.
+		Front-End (Angular):
+			Open a terminal in the Angular front-end directory.
+		Run the following command to start the Angular development server:
+		ng serve
+		Open your browser and navigate to http://localhost:4200.

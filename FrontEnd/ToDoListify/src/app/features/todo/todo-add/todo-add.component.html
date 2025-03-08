@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 class="mt-3">Add To-Do</h1>
+  
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()" novalidate>
+      <div class="mt-2">
+        <!-- Validation Error Display -->
+        <div *ngIf="form.submitted && form.invalid" class="alert alert-danger">
+          Please fix the errors in the form and try again.
+        </div>
+  
+        <div class="mt-3">
+          <label class="form-label">Title</label>
+          <input type="text" id="title" [(ngModel)]="model.title" class="form-control" name="title" required #titleField="ngModel">
+          <!-- Error message for required field -->
+          <div *ngIf="titleField.invalid && titleField.touched" class="text-danger">
+            <small *ngIf="titleField.errors?.['required']">Title is required.</small>
+          </div>
+        </div>
+  
+        <div class="mt-3">
+          <label class="form-label">Created Date</label>
+          <!-- Displaying todayDate without binding -->
+          <input type="text" [value]="todayDate" class="form-control" disabled>
+        </div>
+  
+        <div class="mt-3">
+          <label class="form-label">
+            <input type="checkbox" [(ngModel)]="model.isCompleted" name="isCompleted"> Is Completed?
+          </label>
+        </div>
+  
+        <div class="mt-3">
+          <label class="form-label">Detail (Optional)</label>
+          <textarea id="detail" [(ngModel)]="model.detail" name="detail" class="form-control" rows="3"></textarea>
+        </div>
+  
+        <!-- Priority Dropdown (Populated Dynamically) -->
+        <div class="mt-3">
+          <label class="form-label">Priority (Optional)</label>
+          <select [(ngModel)]="model.priorityId" name="priorityId" class="form-select">
+            <option [ngValue]="null">-- Select Priority --</option>
+            <option *ngFor="let priority of priorities" [ngValue]="priority.id">{{ priority.priorityLevel }}</option>
+          </select>
+        </div>
+  
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

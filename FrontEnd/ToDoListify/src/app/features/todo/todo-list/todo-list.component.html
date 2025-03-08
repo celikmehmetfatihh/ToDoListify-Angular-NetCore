@@ -1,0 +1,67 @@
+<div class="container">
+    <h1 class="mt-3">ToDo List</h1>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <h2 class="mb-0">Pending Todos</h2>
+      <a [routerLink]="['/tasks/displaytasks/add']" class="btn btn-primary">Add Task</a>
+    </div>
+
+    <!-- Section for Pending Todos -->
+    <div *ngIf="pendingTodos?.length; else noPendingTodos" class="mt-4">
+      <div class="row">
+        <div *ngFor="let todo of pendingTodos" class="col-md-6 mb-3">
+          <div class="card shadow-sm">
+            <div class="card-body position-relative">
+              <!-- Title with top right date -->
+              <h5 class="card-title text-primary d-flex justify-content-between">
+                {{ todo.title }}
+                <small class="text-muted">{{ todo.createDate | date: 'shortDate' }}</small>
+              </h5>
+              <!-- Details and priority -->
+              <p *ngIf="todo.detail" class="card-text"><strong>Detail:</strong> {{ todo.detail }}</p>
+              <p class="card-text"><strong>Priority:</strong> {{ getPriorityLevel(todo.priorityId) }}</p>
+
+              <!-- Update and Delete buttons -->
+              <div class="d-flex justify-content-end gap-2 mt-3">
+                <a class="btn btn-outline-success btn-sm px-4" [routerLink]="['/tasks/displaytasks', todo.id]">Update</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noPendingTodos>
+      <p class="mt-3 text-muted">No Pending Todos.</p>
+    </ng-template>
+
+    <!-- Section for Completed Todos -->
+    <div *ngIf="completedTodos?.length; else noCompletedTodos" class="mt-4">
+      <h2 class="mt-4">Completed Todos</h2>
+      <div class="row">
+        <div *ngFor="let todo of completedTodos" class="col-md-6 mb-3">
+          <div class="card shadow-sm">
+            <div class="card-body position-relative">
+              <!-- Title with top right date -->
+              <h5 class="card-title text-success d-flex justify-content-between">
+                {{ todo.title }}
+                <small class="text-muted">{{ todo.createDate | date: 'shortDate' }}</small>
+              </h5>
+              <!-- Details and priority -->
+              <p *ngIf="todo.detail" class="card-text"><strong>Detail:</strong> {{ todo.detail }}</p>
+              <p class="card-text"><strong>Priority:</strong> {{ getPriorityLevel(todo.priorityId) }}</p>
+
+              <!-- Update and Delete buttons -->
+              <div class="d-flex justify-content-end gap-2 mt-3">
+                <a class="btn btn-outline-success btn-sm px-4" [routerLink]="['/tasks/displaytasks', todo.id]">Update</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noCompletedTodos>
+      <p class="mt-3 text-muted">No Completed Todos.</p>
+    </ng-template>
+</div>

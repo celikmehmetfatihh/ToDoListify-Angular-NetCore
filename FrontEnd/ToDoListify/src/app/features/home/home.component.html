@@ -1,0 +1,24 @@
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-primary fw-bold mb-4">Welcome to <span class="text-info">ToDoListify</span></h1>
+    <p class="lead text-secondary mb-5">
+        Your simple and efficient task management tool to keep track of your daily tasks. Add, edit, and manage your to-dos in a seamless, intuitive interface.
+    </p>
+
+    <div class="card shadow-lg border-0 mb-5 mx-auto" style="max-width: 750px; background-color: #f9f9f9;">
+        <div class="card-body py-4">
+            <h2 class="h4 text-dark fw-bold mb-3">Features</h2>
+            <ul class="list-unstyled text-left">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Create and manage your to-do items with ease.</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Set priority levels for each task to stay organized.</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>View and update completed tasks as needed.</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mark tasks as complete when you're done.</li>
+            </ul>
+
+            <div class="d-flex justify-content-center mt-4">
+                <a [routerLink]="['/tasks/displaytasks']" class="btn btn-primary btn-lg me-3 px-4">View Your To-Do List</a>
+                <a [routerLink]="['/tasks/displaytasks/add']" class="btn btn-outline-secondary btn-lg px-4">Add New Task</a>
+            </div>
+        </div>
+    </div>
+
+</div>

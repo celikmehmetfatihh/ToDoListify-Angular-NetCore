@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ToDoListify.API.props" />
+</Project>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5ONjFLaCHwv8IJLWahYtjOFgHwkWF92gMcM1qGJDf4o=",
+  "Source": "ToDoListify.API",
+  "BasePath": "_content/ToDoListify.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
